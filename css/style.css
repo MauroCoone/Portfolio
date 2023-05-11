@@ -1,0 +1,591 @@
+/* fonts */
+@font-face {
+  font-family: 'Poppins-Bold';
+  src: url(../font/Poppins-Bold.ttf);
+}
+@font-face {
+  font-family: 'Poppins-Light';
+  src: url(../font/Poppins-Light.ttf);
+}
+@font-face {
+  font-family: 'Poppins';
+  src: url(../font/Poppins-Regular.ttf);
+}
+@font-face {
+  font-family: 'Poppins-Medium';
+  src: url(../font/Poppins-Medium.ttf);
+}
+/* colors */
+:root{
+  --red: #9E2A2B;
+  --orange: #E09F3E;
+  --light: #FFF3B0;
+  --blue: #335C67;
+}
+* {
+  font-family: 'Poppins';
+}
+body{
+  overflow-x: hidden;
+}
+
+/* ------------------------------------------------------------------ */
+.act{
+    font-family: 'Poppins-Bold';
+  }
+  nav{
+    background-color: transparent;
+    position: fixed;
+    z-index: 1000;
+    width: 100%;
+    transition: 0.5s;
+  }
+  .navbar{
+    background-color: var(--blue);
+  }
+  nav ul{
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+    margin: 0;
+    padding: 0;
+    margin: auto;
+  }
+  nav ul div{
+    display: flex;
+    gap: 2rem;
+    margin: 1rem 0;
+    align-items: center;
+  }
+  nav ul div li{
+    list-style: none;
+  }
+  nav ul div a img{
+    width: 5rem;
+    margin-right: 3rem;
+  }
+  nav ul li a{
+    font-size: 1em;
+    color: #FFF3B0;
+    transition: 0.4s;
+    font-family: 'Poppins-Light';
+  }
+  li a:hover{
+    transition: 0.4s ease-out;
+    text-decoration: underline;
+  }
+  li .search-btn:hover{
+    text-decoration: none;
+  }
+  #navbar.scrolled {
+    background-color: var(--blue);
+  }
+  header {
+    position: relative;
+    background-color: black;
+    height: 100vh;
+    min-height: 25rem;
+    width: 100%;
+    overflow: hidden;
+  }
+  
+  header video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: 0;
+    transform: translateX(-50%) translateY(-50%);
+  }
+  
+  header .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: #000000;
+    opacity: 0.3;
+    z-index: 1;
+  }
+  header article h1{
+    color: var(--light);
+    position: absolute;
+    top: 65vh;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    font-size: 48px;  
+    animation: fadeIn ease 3s;
+  }
+  header article div p{
+    color: white;
+    position: absolute;
+    top: 71vh;
+    left:50%;
+    transform: translate(-50%, -50%);
+    z-index: 2; 
+    animation: fadeIn ease 3s;
+    overflow: hidden; 
+    border-right: .15em solid rgb(255, 255, 255); 
+    white-space: nowrap; 
+    letter-spacing: 0em; 
+    font-size: 1rem;
+    animation: 
+      typing 5s steps(30, end) infinite,
+      blink-caret .5s step-end infinite;
+}
+  /* The typing effect */
+@keyframes typing {
+  0% { width: 0 }
+  70% { width: 18% }
+}
+
+/* The typewriter cursor effect */
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: rgb(255, 255, 255) }
+}
+
+  header article button{
+    position: absolute;
+    cursor: pointer;
+    z-index: 2;
+    border: none;
+    border-radius: 5vh;
+    border: 3px solid #EFEFEF;
+    background-color: #EFEFEF;
+    top: 80vh;
+    left: 50%;
+    height: 45px;
+    width: 25vh;
+    color: rgb(30, 30, 30);
+    transition: .4s ease-out;
+    color: #141529;
+    animation: fadeIn ease 3s;
+    font-size: 0.9em;
+    transform: translate(-50%, -50%);
+  }
+  header article button:hover {
+    border: 3px solid #EFEFEF;
+    background-color:transparent;
+    color: #fafafa;
+}
+
+header article img{
+  border-radius: 50%;
+  position: absolute;
+  width: 15rem;
+  z-index: 2;
+  top: 40vh;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  
+}
+/* search navigation */
+  .search-box{  
+    margin-top: 28px;
+    list-style: none;
+  }
+  .search-box input::placeholder{
+    color: white;
+    font-size: 12px;
+    font-family: 'Poppins-Light';
+  }
+  .search-box:hover > .search-txt{
+    width: 200px;
+    padding: 0 20px;
+    border: solid white 1px;
+    border-radius: 50px;
+    color: white;
+  }
+  .search-btn{
+    color: rgb(255, 255, 255);
+    float: right;
+    width: 40px;
+    height: 30px;
+    border-radius: 50%;
+    background: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 10s;
+  }
+  .fa-search{
+    color: var(--light);
+  }
+  .search-txt{
+    border: none;
+    background: none;
+    outline: none;
+    float: left;
+    padding: 0;
+    color: white;
+    font-size: 16px;
+    transition: 0.4s;
+    line-height: 30px;
+    width: 0px;
+  }
+
+  
+/* ------------------------------------  CONTACT  ----------------------------------*/ 
+
+#contact{
+  display: grid;
+  grid-template-columns: 50% 50%;
+  color: rgba(255, 255, 255, 0.4);
+  height: 100vh;
+  overflow: hidden;
+  padding-top: 5rem;
+}
+#contact article h1{
+  color: var(--red);
+  margin-left: 10vh;
+  margin-top: 5vh;
+  font-size: 24px;
+  width: 75vh;
+  border-bottom: 4px solid var(--red);
+  font-family: 'Poppins-Medium';
+}
+#contact article h3{
+  color: var(--red);
+  margin-left: 10vh;
+  font-size: 18px;
+
+}
+a{color:inherit;text-decoration:none}
+
+#contact section{
+	width:100%;
+	margin:auto;
+	min-height:100%;
+	position:relative;
+	background:url(../images/contactBack.jpg) no-repeat center;
+  background-size: cover;
+	box-shadow:0 12px 15px 0 rgba(0,0,0,.24),0 17px 50px 0 rgba(0,0,0,.19);
+  grid-column: 2/3;
+}
+#contact section article{
+	width:100%;
+	height:100%;
+	position:absolute;
+	padding:70px 15vh 0 70px;
+	background: rgba(12, 27, 65, 0.9);
+}
+#contact figure + img{
+  margin-top: 3vh;
+  width: 100%;
+}
+#contact section article .sign-in-htm{
+	top:0;
+	left:0;
+	right:0;
+	bottom:0;
+	position:absolute;
+	transform:rotateY(180deg);
+	backface-visibility:hidden;
+	transition:all .4s linear;
+}
+#contact section article .sign-in,
+#contact section article .sign-up,
+.login-form .group .check{
+	display:none;
+}
+#contact section article .tab,
+.login-form .group .label,
+.login-form .group .button{
+	text-transform:uppercase;
+}
+#contact section article .tab{
+	font-size:18px;
+	margin-right:15px;
+	padding-bottom:5px;
+	margin:0 15px 10px 0;
+	display:inline-block;
+	border-bottom:2px solid transparent;
+  cursor: pointer;
+}
+#contact section article .sign-in:checked + .tab,
+#contact section article .sign-up:checked + .tab{
+	color:#fff;
+	border-color:var(--red);
+
+}
+.login-form{
+	min-height:345px;
+	position:relative;
+	perspective:1000px;
+	transform-style:preserve-3d;
+  margin-right: 70px;
+}
+.login-form .group{
+	margin-bottom: 15px;
+}
+.radiogeslacht + .group{
+  margin-top: 30px;
+}
+.login-form .group .label,
+.login-form .group .input,
+.login-form .group .button{
+	width:100%;
+	color: white;
+	display:block;
+}
+.login-form .group .input,
+.login-form .group .button{
+	border:none;
+	padding:8px 20px;
+  margin-top: 10px;
+	border-radius:25px;
+	background:rgba(255,255,255,.1);
+}
+.login-form .group input[data-type="password"]{
+	text-security:circle;
+	-webkit-text-security:circle;
+}
+.login-form .group .label{
+	color:#aaa;
+	font-size:12px;
+}
+.login-form .group .button{
+	background:var(--red);
+  border: 3px solid var(--red);
+  cursor: pointer;
+  transition: 0.6s;
+  
+}
+.login-form .group .button:hover{
+  background: transparent;
+  transition: 0.6s;
+  
+}
+.login-form .group label .icon{
+	width:15px;
+	height:15px;
+	border-radius:2px;
+	position:relative;
+	display:inline-block;
+	background:rgba(255,255,255,.1);
+}
+.login-form .group label .icon:before,
+.login-form .group label .icon:after{
+	content:'';
+	width:10px;
+	height:2px;
+	background:#fff;
+	position:absolute;
+	transition:all .2s ease-in-out 0s;
+}
+.login-form .group label .icon:before{
+	left:3px;
+	width:5px;
+	bottom:6px;
+	transform:scale(0) rotate(0);
+}
+.login-form .group label .icon:after{
+	top:6px;
+	right:0;
+	transform:scale(0) rotate(0);
+}
+.login-form .group .check:checked + label{
+	color:#fff;
+}
+.login-form .group .check:checked + label .icon{
+	background: var(--red);
+  
+}
+.login-form .group .check:checked + label .icon:before{
+	transform:scale(1) rotate(45deg);
+}
+.login-form .group .check:checked + label .icon:after{
+	transform:scale(1) rotate(-45deg);
+}
+#contact section article .sign-in:checked + .tab + .sign-up + .tab + .login-form .sign-in-htm{
+	transform:rotate(0);
+}
+#contact section article .sign-up:checked + .tab + .login-form .sign-up-htm{
+	transform:rotate(0);
+}
+
+.hr{
+	height:2px;
+	margin:60px 0 50px 0;
+	background:rgba(255,255,255,.2);
+}
+.foot-lnk{
+ padding-bottom: 15px;
+}
+input[type="radio"] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  background-color: white;
+  border-radius: 50%; 
+  margin-right: 0.5rem;
+  
+}
+input[type="radio"]:checked {
+  background-clip: content-box;
+  background-color: var(--red);
+  transition: all .2s ease-in-out 0s;
+}
+.radiogeslacht{
+  display: grid;
+  margin-top: 10px;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+input[type="radio"]:checked  + label {
+  color: white;
+  transition: all .2s ease-in-out 0.1s;
+  
+}
+.geslachtt{
+  color: #aaa;
+  font-size: 12px;
+}
+#contact article figure{
+  display: grid;
+  grid-template-columns: 15% 55%;
+  grid-template-rows: repeat(5,1fr);
+  margin-left: 10vh;
+}
+#contact figure img{
+    width: 70%;
+    padding: 10px;
+}
+#contact figure p{
+  color: black;
+  align-self: center;
+  font-size: 16px;
+  transition: 0.5s;
+  cursor: pointer;
+}
+#contact figure p:hover{
+  margin-left: 15px;
+  transition: 0.5s;
+}
+/* ------------------------------------- main ------------------------------- */
+.bgAboutme{
+  background-color: #141313;
+}
+.aboutme{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  width: 70%;
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+.aboutme div img{
+  border-radius: 5rem;
+}
+.aboutme--text h2{
+  color: #FFF3B0;
+}
+.aboutme--text hr{
+  color: var(--light);
+  height: 1px;
+  margin-top: 1rem;
+}
+.aboutme--text p{
+  color: white;
+  font-size: 0.8rem;
+  margin-top: 1rem;
+}
+.aboutme--text button{
+  margin-top: 1rem;
+  background-color: transparent;
+  color: white;
+  font-size: 0.8rem;
+  border: 2px solid white;
+  padding: 0.5rem 1rem;
+  border-radius: 10px;
+}
+/* ---------------------- glitch effect image ------------------------ */
+.glitch
+  {
+    position: relative;
+    border-radius: 2rem;
+    width: 100%;
+    height: 60vh;
+    background: url(../images/Mc.jpg);
+    background-size: cover;
+  }
+
+.glitch:before
+  {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url(../images/Mc.jpg);
+    border-radius: 2rem;
+    background-size: cover; /* contain for split effect */
+    opacity: .5;
+    mix-blend-mode: hard-light;
+    animation: glitch 6s linear infinite;
+  }
+
+
+@keyframes glitch
+{
+  0%
+  {
+    background-position: 0 0;
+    filter: hue-rotate(0deg);
+  }
+  10%
+  {
+    background-position: 5px 0;
+  }
+  20%
+  {
+    background-position: -5px 0;
+  }
+  30%
+  {
+    background-position: 15px 0;
+  }
+  40%
+  {
+    background-position: -5px 0;
+  }
+  50%
+  {
+    background-position: -25px 0;
+  }
+  60%
+  {
+    background-position: -20px 0;
+  }
+  70%
+  {
+    background-position: 0 0px;
+  }
+  80%
+  {
+    background-position: -10px 0px;
+  }
+  81%
+  {
+    background-position: 5px 0;
+  }
+  100%
+  {
+    background-position: 0 0;
+    filter: hue-rotate(360deg);
+  }
+}
+
+/* ------------------------------------------------ */
+

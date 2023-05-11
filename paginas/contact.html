@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Mauro Coone">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Site van Mauround the world, hierop kan je reisgidsen kopen en zoveel meer.">
+    <meta name="keywords" content="reizen, fun, familie, porto, vliegtuig, strand, zee, cultuur">
+
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/master.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/media.css">
+    <link rel="stylesheet" href="../css/print.css">
+    <link rel="stylesheet" href="../css/swiper-bundle.min.css"/>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="icon" type="image/png" href="../beelden/logo.png"/>
+    <title>Contact</title>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://kit.fontawesome.com/af431bbb3e.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <nav class="navbar">
+        <ul class="active" id="entiteit">
+            <div>
+                <a href="../index.html"><img src="../images/Logo.png" alt="logo"></a>
+                <li>
+                    <a href="../index.html">Home</a>   
+                </li>
+                <li>
+                    <a href="">Projecten</a>    <!-- detail pagina voor elk project-->
+                </li>
+                <li>
+                    <a href="">Diensten</a>
+                </li>
+                <li>
+                    <a href="">Technologieën</a>
+                </li>
+                <li>
+                    <a class="act" href="#">Contact</a>
+                </li>
+            </div>
+            <li class="search-box">
+                <input class="search-txt" type="text" name="" placeholder="Wat wil je zoeken?">
+                <a class="search-btn" href="#">
+                    <i class="fas fa-search"></i>
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+<main id="contact">
+    <article>
+        <h1>Contacteer mij</h1>
+        <h3>Informatie</h3>
+        <figure>
+            <img src="../images/fb.png" alt=""><p>Mauro.Coone</p>
+            <img src="../images/yt.png" alt=""><p>MaurooooC</p>
+            <img src="../images/mail.png" alt=""><p>Mauro.coone@gmail.com</p>
+            <img src="../images/linkedin.png" alt=""><p>MauroCoone</p>
+            <img src="../images/adress.png" alt=""><p>Terlaak 9, 1651 Lot </p>
+        </figure>
+        <img src="../images/map2.png" alt="house on map">
+    </article>
+
+    <section>
+        <article>
+            <input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1" class="tab">Stuur mij een bericht</label>
+            <input id="tab-2" type="radio" name="tab" class="sign-up"><label for="tab-2" class="tab"></label>
+            <div class="login-form">
+                <div class="sign-in-htm">
+                    <div class="foot-lnk">
+                        <a href="#forgot">* verplichte velden</a>
+                    </div>
+                    <div class="group">
+                        <label for="user" class="label">Gebruikersnaam</label>
+                        <input id="user" type="text" class="input" placeholder="Johnie">
+                    </div>
+                    <div class="group">
+                        <label for="pass" class="label">Email*</label>
+                        <input id="pass" type="text" class="input" data-type="password" placeholder="voorbeeld@gmail.com">
+                    </div>
+                    <div class="group">
+                        <label for="user" class="label">Uw bericht*</label>
+                        <input id="user" type="text" class="input" placeholder="...">
+                    </div>
+                    <label for="user" class="geslachtt">GESLACHT</label><br> 
+
+                    <div class="radiogeslacht">
+                        <div>
+                            <input type="radio" id="geslacht" name= "geslacht" value="man" ><label for="man">Man</label>
+                        </div>
+                        <div>
+                            <input type="radio" id="geslacht" name= "geslacht" value="vrouw"><label for="vrouw">Vrouw</label>
+                        </div>
+                        <div>
+                            <input type="radio" id="geslacht" name= "geslacht" value="geen"><label for="geen">Onbekend</label><br> 
+                        </div>
+                    </div>
+
+                    
+                    <div class="group">
+                        <input id="check" type="checkbox" class="check" checked>
+                        <label for="check"><span class="icon"></span>Meldingen ontvangen via Email</label>
+                    </div>
+                    <div class="group">
+                        <input type="submit" class="button" value="Verzenden">
+                    </div>
+                    
+                </div>
+                
+            </div>
+        </article>
+    </section>
+</main>
+
+     <script>
+        AOS.init();
+        function toon() {
+            var hamb = document.getElementById("entiteit");
+            hamb.classList.toggle("active");
+        }
+
+        window.onscroll = function() {myFunction()};
+
+        var navbar = document.getElementById("navbar");
+        var sticky = navbar.offsetTop;
+
+        function myFunction() {
+            if (window.pageYOffset >= sticky) {
+        navbar.classList.add("sticky")
+        } else {
+        navbar.classList.remove("sticky");
+        }
+}
+ 
+    </script>
+</body>
+
+</html>

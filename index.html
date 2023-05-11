@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Mauro Coone">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Een portfolio over Mauro Coone">
+    <meta name="keywords" content="portfolio, Mauro, School, web, internet">
+
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+
+    <link rel="icon" type="image/png" href="images/Logo.png"/>  <!-- Favicon -->
+    <title>Portfolio | Mauro Coone</title>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/af431bbb3e.js" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+</head>
+
+<body>
+    <nav id="navbar">
+        <ul class="active" id="entiteit">
+            <div>
+                <a href="index.html"><img src="images/Logo.png" alt="logo"></a>
+                <li>
+                    <a class="act" href="#">Home</a>   
+                </li>
+                <li>
+                    <a href="">Projecten</a>   
+                </li>
+                <li>
+                    <a href="">Diensten</a>
+                </li>
+                <li>
+                    <a href="">Technologieën</a>
+                </li>
+                <li>
+                    <a href="paginas/contact.html">Contact</a>
+                </li>
+            </div>
+            <li class="search-box">
+                <input class="search-txt" type="text" name="" placeholder="Wat wil je zoeken?">
+                <a class="search-btn" href="#">
+                    <i class="fas fa-search"></i>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <header>
+        <div class="overlay"></div>
+        <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop">
+            <source src="images/bg.mp4" type="video/mp4">
+        </video>
+        <article>
+            <img src="images/mauro.jpg" alt="picture Mauro Coone">
+            <h1>Mauro Coone</h1>
+            <div class="typewriter">
+                <p>Designer and front end developer</p>
+            </div>
+            <a href=""><button>lees meer</button></a>
+        </article>
+    </header>
+    <main>
+        <div class="bgAboutme">
+            <section class="aboutme">
+                <div class="aboutme--image glitch" class="aos-init aos-animate" data-aos="zoom-in-right" data-aos-duration="1500">
+                    <!-- foto van mij --> <!-- http://www.onlinetutorialsweb.com/demo/css-glitch-effects/ -->
+                </div>
+                <div class="aboutme--text">   
+                    <h2 class="aos-init aos-animate" data-aos="zoom-in" data-aos-duration="1500">About me</h2>
+                    <hr class="aos-init aos-animate" data-aos="zoom-in" data-aos-duration="1500">
+                    <p class="aos-init aos-animate" data-aos="zoom-in" data-aos-duration="1500">Ik ben Mauro Coone. <br>Mijn passies zijn Voetballen, fitnessen en Chiro. Ik ben dus enorm sportief en kan ook goed omgaan met kinderen en vooral goed in groep werken, ik doe dit dagelijks met de chiroleiding of mijn voetbalploeg. Mijn doelen zijn om binnen ongeveer 5jaar zelfstandig te wonen en een goede job te hebben in de IT wereld</p>
+                    <div>
+                        
+                    </div>
+                    <button class="aos-init aos-animate" data-aos-offset="150" data-aos="zoom-in-left" data-aos-duration="1500"><a href="images/MauroCoone_eindopdracht_cv_versie2.pdf" download="Curriculum vitae">Download mijn CV</a></button>
+                </div>
+            </section>
+        </div>
+    </main>
+    <script src="js/main.js"></script>
+    <script>
+        AOS.init({
+            disable: function () {
+                var maxWidth = 820;
+                return window.innerWidth < maxWidth;
+            }
+        });
+
+        function toon() {
+            var hamb = document.getElementById("entiteit");
+            hamb.classList.toggle("active");
+        }
+        
+    </script>
+    
+</body>
+
+</html>
