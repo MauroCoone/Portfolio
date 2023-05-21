@@ -15,6 +15,7 @@
   font-family: 'Poppins-Medium';
   src: url(../font/Poppins-Medium.ttf);
 }
+
 /* colors */
 :root{
   --red: #9E2A2B;
@@ -27,6 +28,7 @@
 }
 body{
   overflow-x: hidden;
+  scroll-behavior: smooth;
 }
 
 /* ------------------------------------------------------------------ */
@@ -43,28 +45,33 @@ body{
   .navbar{
     background-color: var(--blue);
   }
-  nav ul{
+  nav .navlist{
     display: flex;
     justify-content: space-between;
     width: 90%;
     margin: 0;
     padding: 0;
     margin: auto;
+    transition: 0.5s;
   }
-  nav ul div{
+  nav .navlist div{
     display: flex;
     gap: 2rem;
-    margin: 1rem 0;
+    margin: 2rem 0;
     align-items: center;
+    transition: 0.5s;
   }
-  nav ul div li{
+  nav .navlist.conta div{
+    margin: 1rem 0;
+  }
+  nav .navlist div li{
     list-style: none;
   }
-  nav ul div a img{
+  nav .navlist div a img{
     width: 5rem;
     margin-right: 3rem;
   }
-  nav ul li a{
+  nav .navlist li a{
     font-size: 1em;
     color: #FFF3B0;
     transition: 0.4s;
@@ -77,8 +84,17 @@ body{
   li .search-btn:hover{
     text-decoration: none;
   }
-  #navbar.scrolled {
+  /* navbar als er gescrolled word*/
+  #navbar.scrolled {      
     background-color: var(--blue);
+  }
+  /* ul als er gescrolled word*/
+  #navbar .scrolled {   
+    width: 85%;
+  }
+  #navbar .scrolled div{   
+    margin: 1rem 0;
+    
   }
   header {
     position: relative;
@@ -109,6 +125,16 @@ body{
     width: 100%;
     background-color: #000000;
     opacity: 0.3;
+    z-index: 1;
+  }
+  header .overlay2 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: #000000;
+    opacity: 0.5;
     z-index: 1;
   }
   header article h1{
@@ -155,7 +181,7 @@ body{
     cursor: pointer;
     z-index: 2;
     border: none;
-    border-radius: 5vh;
+    border-radius: 10px;
     border: 3px solid #EFEFEF;
     background-color: #EFEFEF;
     top: 80vh;
@@ -230,7 +256,10 @@ header article img{
     width: 0px;
   }
 
-  
+  div #diensten h1{
+    color: #FFF3B0;
+    font-size: 2rem;
+  }
 /* ------------------------------------  CONTACT  ----------------------------------*/ 
 
 #contact{
@@ -276,7 +305,7 @@ a{color:inherit;text-decoration:none}
 	background: rgba(12, 27, 65, 0.9);
 }
 #contact figure + img{
-  margin-top: 3vh;
+  margin-top: 5vh;
   width: 100%;
 }
 #contact section article .sign-in-htm{
@@ -341,10 +370,6 @@ a{color:inherit;text-decoration:none}
   margin-top: 10px;
 	border-radius:25px;
 	background:rgba(255,255,255,.1);
-}
-.login-form .group input[data-type="password"]{
-	text-security:circle;
-	-webkit-text-security:circle;
 }
 .login-form .group .label{
 	color:#aaa;
@@ -450,23 +475,24 @@ input[type="radio"]:checked  + label {
   font-size: 12px;
 }
 #contact article figure{
-  display: grid;
-  grid-template-columns: 15% 55%;
-  grid-template-rows: repeat(5,1fr);
+  display: flex;
+  flex-direction: column;
   margin-left: 10vh;
 }
-#contact figure img{
-    width: 70%;
-    padding: 10px;
-}
-#contact figure p{
+#contact article figure a{
+  display: flex;
   color: black;
+  align-items: center;
   align-self: center;
   font-size: 16px;
   transition: 0.5s;
   cursor: pointer;
 }
-#contact figure p:hover{
+#contact figure a img{
+    width: 10%;
+    padding: 10px;
+}
+#contact figure a:hover{
   margin-left: 15px;
   transition: 0.5s;
 }
@@ -482,6 +508,7 @@ input[type="radio"]:checked  + label {
   padding-top: 5rem;
   padding-bottom: 5rem;
   margin-left: auto;
+  align-items: center;
   margin-right: auto;
 }
 .aboutme div img{
@@ -489,6 +516,7 @@ input[type="radio"]:checked  + label {
 }
 .aboutme--text h2{
   color: #FFF3B0;
+  font-size: 2rem;
 }
 .aboutme--text hr{
   color: var(--light);
@@ -498,6 +526,7 @@ input[type="radio"]:checked  + label {
 .aboutme--text p{
   color: white;
   font-size: 0.8rem;
+  line-height: 1.8;
   margin-top: 1rem;
 }
 .aboutme--text button{
@@ -515,7 +544,7 @@ input[type="radio"]:checked  + label {
     position: relative;
     border-radius: 2rem;
     width: 100%;
-    height: 60vh;
+    height: 50vh;
     background: url(../images/Mc.jpg);
     background-size: cover;
   }
@@ -589,3 +618,242 @@ input[type="radio"]:checked  + label {
 
 /* ------------------------------------------------ */
 
+/* projecten */
+.projectenTitel{
+  color: white;
+  position: absolute;
+  top: 50vh;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  font-size: 6rem;  
+  font-family: 'Poppins-Bold';
+  text-transform: uppercase;
+}
+.quote{
+  color: white;
+  position: absolute;
+  top: 63vh;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  font-size: 1.8rem;  
+  font-family: 'Poppins-Light';
+  text-transform: uppercase;
+}
+#allProjecten{
+  height: 100vh;
+  background-color: #141313;
+}
+.allProjecten--titel{
+  color: var(--light);
+  padding: 3rem 0 0 7.5%;
+  font-size: 3rem;
+  font-family: 'Poppins-Medium';
+
+}
+/* carousel */
+.container--carousel {
+  position: relative;
+  width: 320px;
+  margin: 0 auto;
+  padding-top: 10rem;
+  perspective: 1000px;
+}
+.carousel {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d; 
+  animation: rotate360 50s infinite forwards linear;
+}
+.carousel__face { 
+  position: absolute;
+  width: 300px;
+  height: 140px;
+  top: 20px;
+  left: 10px;
+  right: 10px;
+  background-size: contain;
+  box-shadow:inset 0 0 0 2000px rgba(0,0,0,0.4);
+  display: flex;
+}
+
+span {
+  margin: auto;
+  font-size: 1.5rem;
+  color: hsl(0, 0%, 100%);
+  text-align: center;
+  font-family: 'Poppins-Bold';
+
+}
+
+
+.carousel__face:nth-child(1) {
+  background-image: url("../images/gip.png");
+  transform: rotateY(  0deg) translateZ(430px); }
+.carousel__face:nth-child(2) { 
+  background-image: url("../images/webshop.png");
+    transform: rotateY( 40deg) translateZ(430px); }
+.carousel__face:nth-child(3) {
+  background-image: url("../images/schrauwen.png");
+  transform: rotateY( 80deg) translateZ(430px); }
+.carousel__face:nth-child(4) {
+  background-image: url("../images/gentseFeesten.png");
+  transform: rotateY(120deg) translateZ(430px); }
+.carousel__face:nth-child(5) { 
+  background-image: url("https://images.pexels.com/photos/969679/pexels-photo-969679.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
+  transform: rotateY(160deg) translateZ(430px); }
+.carousel__face:nth-child(6) { 
+  background-image: url("../images/gip.png");
+  transform: rotateY(200deg) translateZ(430px); }
+.carousel__face:nth-child(7) { 
+  background-image: url("../images/webshop.png");
+  transform: rotateY(240deg) translateZ(430px); }
+.carousel__face:nth-child(8) {
+  background-image: url("../images/schrauwen.png");
+  transform: rotateY(280deg) translateZ(430px); }
+.carousel__face:nth-child(9) {
+  background-image: url("../images/gentseFeesten.png");
+  transform: rotateY(320deg) translateZ(430px); }
+
+
+
+@keyframes rotate360 {
+  from {
+    transform: rotateY(0deg);
+  }
+  to {
+    transform: rotateY(-360deg);
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ----------------------------------- FOOTER -------------------------------- */
+.footer {
+  position: relative;
+  width: 100%;
+  background: var(--blue);
+  min-height: 100px;
+  padding: 20px 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.social-icon,
+.menu {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px 0;
+  flex-wrap: wrap;
+}
+
+.social-icon__item,
+.menu__item {
+  list-style: none;
+}
+
+.social-icon__link {
+  font-size: 2rem;
+  color: #fff;
+  margin: 0 10px;
+  display: inline-block;
+  transition: 0.5s;
+}
+.social-icon__link:hover {
+  transform: translateY(-10px);
+}
+
+.menu__link {
+  font-size: 1.2rem;
+  color: var(--light);
+  margin: 0 10px;
+  display: inline-block;
+  transition: 0.5s;
+  text-decoration: none;
+  font-weight: 300;
+}
+
+.menu__link:hover {
+  opacity: 1;
+}
+
+.footer p {
+  color: #fff;
+  margin: 15px 0 10px 0;
+  font-size: 0.8rem;
+  font-weight: 300;
+}
+
+.wave {
+  position: absolute;
+  top: -100px;
+  left: 0;
+  width: 100%;
+  height: 100px;
+  background: url("../images/waveBlue.png");
+  background-size: 1000px 100px;
+}
+
+.wave#wave1 {
+  z-index: 1000;
+  opacity: 1;
+  bottom: 0;
+  animation: animateWaves 4s linear infinite;
+}
+
+.wave#wave2 {
+  z-index: 999;
+  opacity: 0.5;
+  bottom: 10px;
+  animation: animate 4s linear infinite !important;
+}
+
+.wave#wave3 {
+  z-index: 1000;
+  opacity: 0.2;
+  bottom: 15px;
+  animation: animateWaves 3s linear infinite;
+}
+
+.wave#wave4 {
+  z-index: 999;
+  opacity: 0.7;
+  bottom: 20px;
+  animation: animate 3s linear infinite;
+}
+
+@keyframes animateWaves {
+  0% {
+    background-position-x: 1000px;
+  }
+  100% {
+    background-positon-x: 0px;
+  }
+}
+
+@keyframes animate {
+  0% {
+    background-position-x: -1000px;
+  }
+  100% {
+    background-positon-x: 0px;
+  }
+}
