@@ -11,3 +11,18 @@ window.addEventListener('scroll', () => {
     list.classList.remove('scrolled')
   }
 })
+
+/* scroll stop if we hover over the image */
+
+/*
+const triggerHover = document.querySelector(".carousel")
+const project = document.querySelector(".carousel__face")
+
+project.addEventListener('mouseenter', () => {
+  triggerHover.classList.remove('hoverCarousel')
+})
+
+project.addEventListener('mouseleave', () => {
+  triggerHover.classList.add('hoverCarousel')
+})
+*/  

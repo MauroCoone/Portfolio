@@ -15,20 +15,22 @@
   font-family: 'Poppins-Medium';
   src: url(../font/Poppins-Medium.ttf);
 }
+@import url('https://fonts.googleapis.com/css2?family=Neucha&display=swap');
 
 /* colors */
 :root{
-  --red: #9E2A2B;
-  --orange: #E09F3E;
-  --light: #FFF3B0;
-  --blue: #335C67;
+  --red: hsl(359, 58%, 39%);
+  --orange: hsl(36, 72%, 56%);
+  --light: hsl(51, 100%, 85%);
+  --blue: hsl(193, 34%, 30%);
 }
 * {
   font-family: 'Poppins';
+  scroll-behavior: smooth;
 }
 body{
   overflow-x: hidden;
-  scroll-behavior: smooth;
+  
 }
 
 /* ------------------------------------------------------------------ */
@@ -54,6 +56,11 @@ body{
     margin: auto;
     transition: 0.5s;
   }
+  .vasteIcons a svg, .vasteIcons a img{
+    width: 40px !important; 
+    height: 40px;
+    object-fit: contain;
+  }
   nav .navlist div{
     display: flex;
     gap: 2rem;
@@ -69,11 +76,11 @@ body{
   }
   nav .navlist div a img{
     width: 5rem;
-    margin-right: 3rem;
+    margin-right: 1rem;
   }
   nav .navlist li a{
     font-size: 1em;
-    color: #FFF3B0;
+    color: var(--light);
     transition: 0.4s;
     font-family: 'Poppins-Light';
   }
@@ -302,11 +309,14 @@ a{color:inherit;text-decoration:none}
 	height:100%;
 	position:absolute;
 	padding:70px 15vh 0 70px;
-	background: rgba(12, 27, 65, 0.9);
+	background: hsla(194, 35%, 30%, 0.955);
 }
 #contact figure + img{
   margin-top: 5vh;
   width: 100%;
+}
+.contac{
+  box-shadow: 0px 10px 22px 0px rgba(0, 0, 0, 0.287);
 }
 #contact section article .sign-in-htm{
 	top:0;
@@ -538,10 +548,13 @@ input[type="radio"]:checked  + label {
   padding: 0.5rem 1rem;
   border-radius: 10px;
 }
+.aboutme--text p strong{
+  font-weight: 1000;
+  color: var(--light);
+}
 /* ---------------------- glitch effect image ------------------------ */
 .glitch
   {
-    position: relative;
     border-radius: 2rem;
     width: 100%;
     height: 50vh;
@@ -549,72 +562,6 @@ input[type="radio"]:checked  + label {
     background-size: cover;
   }
 
-.glitch:before
-  {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: url(../images/Mc.jpg);
-    border-radius: 2rem;
-    background-size: cover; /* contain for split effect */
-    opacity: .5;
-    mix-blend-mode: hard-light;
-    animation: glitch 6s linear infinite;
-  }
-
-
-@keyframes glitch
-{
-  0%
-  {
-    background-position: 0 0;
-    filter: hue-rotate(0deg);
-  }
-  10%
-  {
-    background-position: 5px 0;
-  }
-  20%
-  {
-    background-position: -5px 0;
-  }
-  30%
-  {
-    background-position: 15px 0;
-  }
-  40%
-  {
-    background-position: -5px 0;
-  }
-  50%
-  {
-    background-position: -25px 0;
-  }
-  60%
-  {
-    background-position: -20px 0;
-  }
-  70%
-  {
-    background-position: 0 0px;
-  }
-  80%
-  {
-    background-position: -10px 0px;
-  }
-  81%
-  {
-    background-position: 5px 0;
-  }
-  100%
-  {
-    background-position: 0 0;
-    filter: hue-rotate(360deg);
-  }
-}
 
 /* ------------------------------------------------ */
 
@@ -631,15 +578,16 @@ input[type="radio"]:checked  + label {
   text-transform: uppercase;
 }
 .quote{
-  color: white;
+  color: var(--orange);
   position: absolute;
-  top: 63vh;
-  left: 50%;
+  top: 50vh;
+  left: 75%;
+  rotate: 30deg;
   transform: translate(-50%, -50%);
-  z-index: 2;
-  font-size: 1.8rem;  
-  font-family: 'Poppins-Light';
-  text-transform: uppercase;
+  z-index: 1;
+  opacity: 0.9;
+  font-size: 1.5rem;  
+  font-family: 'Neucha', cursive;
 }
 #allProjecten{
   height: 100vh;
@@ -647,7 +595,7 @@ input[type="radio"]:checked  + label {
 }
 .allProjecten--titel{
   color: var(--light);
-  padding: 3rem 0 0 7.5%;
+  padding: 6rem 0 0rem 15%;
   font-size: 3rem;
   font-family: 'Poppins-Medium';
 
@@ -657,7 +605,7 @@ input[type="radio"]:checked  + label {
   position: relative;
   width: 320px;
   margin: 0 auto;
-  padding-top: 10rem;
+  padding-top: 5rem;
   perspective: 1000px;
 }
 .carousel {
@@ -665,7 +613,7 @@ input[type="radio"]:checked  + label {
   width: 100%;
   height: 100%;
   transform-style: preserve-3d; 
-  animation: rotate360 50s infinite forwards linear;
+  animation: rotate360 30s infinite forwards linear;
 }
 .carousel__face { 
   position: absolute;
@@ -702,7 +650,7 @@ span {
   background-image: url("../images/gentseFeesten.png");
   transform: rotateY(120deg) translateZ(430px); }
 .carousel__face:nth-child(5) { 
-  background-image: url("https://images.pexels.com/photos/969679/pexels-photo-969679.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
+  background-image: url("../images/game.png");
   transform: rotateY(160deg) translateZ(430px); }
 .carousel__face:nth-child(6) { 
   background-image: url("../images/gip.png");
@@ -730,130 +678,140 @@ span {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-/* ----------------------------------- FOOTER -------------------------------- */
-.footer {
-  position: relative;
+/* scrolltrigger homepage */
+.ScrollTrigger {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 100%;
-  background: var(--blue);
-  min-height: 100px;
-  padding: 20px 50px;
+  height: 100vh;
+  position: absolute;
+  top: 17rem;
+}
+
+.chevron {
+  position: absolute;
+  width: 2.1rem;
+  height: 0.48rem;
+  opacity: 0;
+  transform: scale(0.3);
+  -webkit-animation: move-chevron 3s ease-out infinite;
+          animation: move-chevron 3s ease-out infinite;
+}
+.chevron:first-child {
+  -webkit-animation: move-chevron 3s ease-out 1s infinite;
+          animation: move-chevron 3s ease-out 1s infinite;
+}
+.chevron:nth-child(2) {
+  -webkit-animation: move-chevron 3s ease-out 2s infinite;
+          animation: move-chevron 3s ease-out 2s infinite;
+}
+.chevron:before,
+.chevron:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 50%;
+  background: var(--light);
+}
+
+.chevron:before {
+  left: 0;
+  transform: skewY(30deg);
+}
+
+.chevron:after {
+  right: 0;
+  width: 50%;
+  transform: skewY(-30deg);
+}
+
+@-webkit-keyframes move-chevron {
+  25% {
+    opacity: 1;
+  }
+  33.3% {
+    opacity: 1;
+    transform: translateY(2.28rem);
+  }
+  66.6% {
+    opacity: 1;
+    transform: translateY(3.12rem);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(4.8rem) scale(0.5);
+  }
+}
+
+@keyframes move-chevron {
+  25% {
+    opacity: 1;
+  }
+  33.3% {
+    opacity: 1;
+    transform: translateY(2.28rem);
+  }
+  66.6% {
+    opacity: 1;
+    transform: translateY(3.12rem);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(4.8rem) scale(0.5);
+  }
+}
+
+
+
+/* ------------------------------------------------------------------------- */
+#techgnologieen{
+  height: 100vh;
+  background-color: #141313;
+}
+
+#techgnologieen h1{
+  color: var(--light);
+  padding: 6rem 0 0rem 15%;
+  font-size: 3rem;
+  font-family: 'Poppins-Medium';
+}
+.all__technologies{
+  width: 70%;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+.all__technologies div {
+  border: 2px solid var(--light);
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  background-color: transparent;
+  transition: 0.4s;
 }
-
-.social-icon,
-.menu {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 10px 0;
-  flex-wrap: wrap;
+.all__technologies div svg{
+  padding: 2rem 0;
+  transition: 0.4s;
+  fill: var(--light);
 }
-
-.social-icon__item,
-.menu__item {
-  list-style: none;
-}
-
-.social-icon__link {
-  font-size: 2rem;
-  color: #fff;
-  margin: 0 10px;
-  display: inline-block;
-  transition: 0.5s;
-}
-.social-icon__link:hover {
-  transform: translateY(-10px);
-}
-
-.menu__link {
-  font-size: 1.2rem;
+.all__technologies div h2{
   color: var(--light);
-  margin: 0 10px;
-  display: inline-block;
-  transition: 0.5s;
-  text-decoration: none;
-  font-weight: 300;
+  font-family: 'Poppins-Bold';
+  padding-bottom: 2rem;
+  transition: 0.4s;
 }
 
-.menu__link:hover {
-  opacity: 1;
+.all__technologies div:hover{
+  background-color: var(--light);
 }
-
-.footer p {
-  color: #fff;
-  margin: 15px 0 10px 0;
-  font-size: 0.8rem;
-  font-weight: 300;
+.all__technologies div:hover svg{
+  fill: #141313;
 }
-
-.wave {
-  position: absolute;
-  top: -100px;
-  left: 0;
-  width: 100%;
-  height: 100px;
-  background: url("../images/waveBlue.png");
-  background-size: 1000px 100px;
-}
-
-.wave#wave1 {
-  z-index: 1000;
-  opacity: 1;
-  bottom: 0;
-  animation: animateWaves 4s linear infinite;
-}
-
-.wave#wave2 {
-  z-index: 999;
-  opacity: 0.5;
-  bottom: 10px;
-  animation: animate 4s linear infinite !important;
-}
-
-.wave#wave3 {
-  z-index: 1000;
-  opacity: 0.2;
-  bottom: 15px;
-  animation: animateWaves 3s linear infinite;
-}
-
-.wave#wave4 {
-  z-index: 999;
-  opacity: 0.7;
-  bottom: 20px;
-  animation: animate 3s linear infinite;
-}
-
-@keyframes animateWaves {
-  0% {
-    background-position-x: 1000px;
-  }
-  100% {
-    background-positon-x: 0px;
-  }
-}
-
-@keyframes animate {
-  0% {
-    background-position-x: -1000px;
-  }
-  100% {
-    background-positon-x: 0px;
-  }
+.all__technologies div:hover h2{
+  color: #141313;
 }
