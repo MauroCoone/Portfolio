@@ -557,8 +557,8 @@ input[type="radio"]:checked  + label {
   {
     border-radius: 2rem;
     width: 100%;
-    height: 50vh;
-    background: url(../images/Mc.jpg);
+    height: 65vh;
+    background: url(../images/aboutmij.jpg);
     background-size: cover;
   }
 
